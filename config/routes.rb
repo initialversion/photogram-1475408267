@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Vote resource:
+  # CREATE
+  get "/votes/new", :controller => "votes", :action => "new"
+  post "/create_vote", :controller => "votes", :action => "create"
+
+  # READ
+  get "/votes", :controller => "votes", :action => "index"
+  get "/votes/:id", :controller => "votes", :action => "show"
+
+  # UPDATE
+  get "/votes/:id/edit", :controller => "votes", :action => "edit"
+  post "/update_vote/:id", :controller => "votes", :action => "update"
+
+  # DELETE
+  get "/delete_vote/:id", :controller => "votes", :action => "destroy"
+  #------------------------------
+
   # Routes for the Friend_request resource:
   # CREATE
   get "/friend_requests/new", :controller => "friend_requests", :action => "new"
