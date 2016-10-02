@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Friend Request #<%= @friend_request.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Sender</dt>
+      <dd><%= @friend_request.sender_id %></dd>
+
+      <dt>Recipient</dt>
+      <dd><%= @friend_request.recipient_id %></dd>
+
+      <dt>Status</dt>
+      <dd><%= @friend_request.status %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/friend_requests" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/friend_requests/<%= @friend_request.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_friend_request/<%= @friend_request.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

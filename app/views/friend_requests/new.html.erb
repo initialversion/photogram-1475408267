@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @friend_request.errors.any? %>
+  <% @friend_request.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Friend Request</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_friend_request" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for sender_id -->
+      <div class="form-group">
+        <label for="sender_id" class="control-label">
+          Sender
+        </label>
+
+        <input type="text" id="sender_id" name="sender_id" placeholder="Sender" class="form-control" value="<%= @friend_request.sender_id %>">
+      </div>
+
+      <!-- Label and input for recipient_id -->
+      <div class="form-group">
+        <label for="recipient_id" class="control-label">
+          Recipient
+        </label>
+
+        <input type="text" id="recipient_id" name="recipient_id" placeholder="Recipient" class="form-control" value="<%= @friend_request.recipient_id %>">
+      </div>
+
+      <!-- Label and input for status -->
+      <div class="form-group">
+        <label for="status" class="control-label">
+          Status
+        </label>
+
+        <input type="text" id="status" name="status" placeholder="Status" class="form-control" value="<%= @friend_request.status %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Friend Request
+      </button>
+      or
+      <a href="/friend_requests">Cancel</a>
+    </form>
+  </div>
+</div>
