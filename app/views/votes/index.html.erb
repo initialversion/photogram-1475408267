@@ -17,7 +17,7 @@
       <% @votes.each do |vote| %>
       <tr>
         <td><%= vote.user.username %></td>
-        <td><%= vote.photo_id %></td>
+        <td><%= vote.photo.created_at %></td>
         <td>
           <a href="/votes/<%= vote.id %>" class="btn btn-primary">Show</a>
           <a href="/votes/<%= vote.id %>/edit" class="btn btn-warning">Edit</a>
