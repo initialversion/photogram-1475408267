@@ -5,4 +5,6 @@ class Comment < ApplicationRecord
 
   # Validations
 
+  validates :photo_id, :presence => true
+
 end
