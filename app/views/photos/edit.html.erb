@@ -42,7 +42,7 @@
           Owner
         </label>
 
-        <input type="text" id="owner_id" name="owner_id" placeholder="Owner" class="form-control" value="<%= @photo.owner_id %>">
+        <%= select_tag(:owner_id, options_from_collection_for_select(User.all, :id, :username, @photo.owner_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for location -->
