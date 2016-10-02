@@ -20,7 +20,7 @@
       <tr>
         <td><%= photo.caption %></td>
         <td><%= photo.image %></td>
-        <td><%= photo.owner_id %></td>
+        <td><%= photo.owner.username %></td>
         <td><%= photo.location %></td>
         <td>
           <a href="/photos/<%= photo.id %>" class="btn btn-primary">Show</a>
